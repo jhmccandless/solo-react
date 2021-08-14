@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-
+import { BrowserRouter, Route, Link, Switch, Redirect } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
@@ -13,17 +13,22 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 360,
     backgroundColor: theme.palette.background.paper,
   },
+  addBlog: {
+    width: "100%",
+    maxWidth: 360,
+    backgroundColor: theme.palette.primary.light,
+  },
 }));
 
-function ListItemLink(currentBlogState) {
-  return <ListItem button component="a" {...currentBlogState} />;
-}
+// function ListItemLink(currentBlogState) {
+//   return <ListItem button component="a" {...currentBlogState} />;
+// }
 
 function BlogMain({ currentBlogState }) {
   const classes = useStyles();
   return (
     <>
-      <h2>Current List of Blogs</h2>
+      <h3>Current List of Blogs</h3>
 
       <div className={classes.root}>
         <List component="nav" aria-label="secondary">
@@ -37,6 +42,11 @@ function BlogMain({ currentBlogState }) {
               </div>
             );
           })}
+          <div className={classes.addBlog}>
+            <ListItem button>
+              <ListItemText primary="Add Post" />
+            </ListItem>
+          </div>
         </List>
       </div>
 
