@@ -29,12 +29,12 @@ function BlogMain({ currentBlogState }) {
         <List component="nav" aria-label="secondary">
           {currentBlogState.map((el, index) => {
             return (
-              <>
-                <ListItem button key={index}>
+              <div key={index}>
+                <ListItem button>
                   <ListItemText primary={el.title} />
                 </ListItem>
                 <Divider />
-              </>
+              </div>
             );
           })}
         </List>
