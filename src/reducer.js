@@ -1,5 +1,8 @@
 const initiatState = {
-  blogPosts: [{ title: "first blog", content: "lorem epsum" }],
+  blogPosts: [
+    { title: "first blog", content: "lorem epsum" },
+    { title: "Second blog", content: "lorem epsum" },
+  ],
 };
 
 function blog_reducer(state = initiatState, action) {
