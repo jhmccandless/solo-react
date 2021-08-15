@@ -2,11 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-float infinite 3s ease-in-out;
@@ -19,11 +14,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(7px + 2vmin);
+  font-weight: bold;
 }
 
-.App-link {
-  color: rgb(112, 76, 182);
+.color {
+  color: rgb(255, 143, 143);
 }
 
 @keyframes App-logo-float {
