@@ -28,10 +28,16 @@ function BlogMain({ currentBlogState }) {
   const classes = useStyles();
   return (
     <>
-      <h3>Current List of Blogs</h3>
-
-      <div className={classes.root}>
-        <List component="nav" aria-label="secondary">
+      <div
+        className={classes.root}
+        style={{ margin: "30px", display: "inline-block" }}
+      >
+        <h3>Current List of Blogs</h3>
+        <List
+          style={{ borderRadius: "20px", margin: "30px 30px 0 30px auto" }}
+          component="nav"
+          aria-label="secondary"
+        >
           {currentBlogState.map((el, index) => {
             return (
               <div key={index}>

@@ -31,12 +31,13 @@ function App() {
                 backgroundRepeat: "no-repeat",
                 width: "100vw",
                 minHeight: "100vh",
+                // fontFamily: "cursive",
               }}
             >
               <header
                 className="App-header"
                 style={{
-                  borderRadius: "30px",
+                  borderRadius: "20px",
                   backgroundImage: `url(${headerBackgroundImg})`,
                   backgroundPosition: "center",
                   backgroundSize: "cover",
@@ -61,7 +62,6 @@ function App() {
                           fontWeight: "bold",
                           color: "rgb(255, 143, 143)",
                           textShadow: "1px 1px 4px #000000",
-                          fontFamily: "cursive",
                         }}
                         to="/dashboard"
                       >
@@ -75,7 +75,6 @@ function App() {
                         textDecoration: "none",
                         color: "rgb(255, 143, 143)",
                         textShadow: "1px 1px 4px #000000",
-                        fontFamily: "cursive",
                       }}
                       to="/dashboard"
                     >
@@ -88,7 +87,6 @@ function App() {
                         textDecoration: "none",
                         color: "rgb(255, 143, 143)",
                         textShadow: "1px 1px 4px #000000",
-                        fontFamily: "cursive",
                       }}
                       to="/add_post"
                     >
@@ -101,7 +99,6 @@ function App() {
                         textDecoration: "none",
                         color: "rgb(255, 143, 143)",
                         textShadow: "1px 1px 4px #000000",
-                        fontFamily: "cursive",
                       }}
                       to="/about_me"
                     >
@@ -114,7 +111,6 @@ function App() {
                         textDecoration: "none",
                         color: "rgb(255, 143, 143)",
                         textShadow: "1px 1px 4px #000000",
-                        fontFamily: "cursive",
                       }}
                       to="/contact_me"
                     >
