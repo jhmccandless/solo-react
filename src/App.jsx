@@ -10,6 +10,10 @@ import store from "./store";
 import { Provider } from "react-redux";
 
 import BlogMain from "./components/BlogMain";
+import AboutMe from "./components/AboutMe";
+import ContactMe from "./components/ContactMe";
+import AddPost from "./components/AddPost";
+
 import mainBackgroundImg from "./blog-background.jpeg";
 import headerBackgroundImg from "./header-background.jpeg";
 import { color } from "@material-ui/system";
@@ -37,7 +41,6 @@ function App() {
               <header
                 className="App-header"
                 style={{
-                  borderRadius: "20px",
                   backgroundImage: `url(${headerBackgroundImg})`,
                   backgroundPosition: "center",
                   backgroundSize: "cover",
@@ -54,20 +57,18 @@ function App() {
                       margin: "0 0 0 8%",
                     }}
                   >
-                    <a>
-                      <Link
-                        style={{
-                          textDecoration: "none",
-                          fontSize: "calc(15px + 2vmin)",
-                          fontWeight: "bold",
-                          color: "rgb(255, 143, 143)",
-                          textShadow: "1px 1px 4px #000000",
-                        }}
-                        to="/dashboard"
-                      >
-                        Blogging Molly
-                      </Link>
-                    </a>
+                    <Link
+                      style={{
+                        textDecoration: "none",
+                        fontSize: "calc(15px + 2vmin)",
+                        fontWeight: "bold",
+                        color: "rgb(255, 143, 143)",
+                        textShadow: "1px 1px 4px #000000",
+                      }}
+                      to="/dashboard"
+                    >
+                      Blogging Molly
+                    </Link>
                   </Box>
                   <Box margin="0 20px">
                     <Link
@@ -119,7 +120,18 @@ function App() {
                   </Box>
                 </Box>
               </header>
-              <BlogMain />
+              <Switch>
+                <Route exact path="/dashboard" component={BlogMain} />
+                <Route path="/add_post" component={AddPost} />
+                <Route path="/contact_me" component={ContactMe} />
+                <Route path="/about_me" component={AboutMe} />
+
+                <Route path="/post_info/:index" />
+                <Route path="/delete_confirm/:index" />
+                <Route path="*">
+                  <Redirect to="/dashboard" />
+                </Route>
+              </Switch>
             </div>
           </BrowserRouter>
         </CssBaseline>
