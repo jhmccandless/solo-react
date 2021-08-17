@@ -13,6 +13,7 @@ import BlogMain from "./components/BlogMain";
 import AboutMe from "./components/AboutMe";
 import ContactMe from "./components/ContactMe";
 import AddPost from "./components/AddPost";
+import PostDetail from "./components/PostDetail";
 
 import mainBackgroundImg from "./blog-background.jpeg";
 import headerBackgroundImg from "./header-background.jpeg";
@@ -126,7 +127,7 @@ function App() {
                 <Route path="/contact_me" component={ContactMe} />
                 <Route path="/about_me" component={AboutMe} />
 
-                <Route path="/post_info/:index" />
+                <Route path="/post_detail/:index" component={PostDetail} />
                 <Route path="/delete_confirm/:index" />
                 <Route path="*">
                   <Redirect to="/dashboard" />

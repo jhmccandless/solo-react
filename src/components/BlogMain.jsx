@@ -41,9 +41,14 @@ function BlogMain({ currentBlogState }) {
           {currentBlogState.map((el, index) => {
             return (
               <div key={index}>
-                <ListItem button>
-                  <ListItemText primary={el.title} />
-                </ListItem>
+                <Link
+                  style={{ color: "inherit", textDecoration: "inherit" }}
+                  to={`/post_detail/:${index}`}
+                >
+                  <ListItem button>
+                    <ListItemText primary={el.title} />
+                  </ListItem>
+                </Link>
                 <Divider />
               </div>
             );
