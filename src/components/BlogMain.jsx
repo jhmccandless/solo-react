@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { BrowserRouter, Route, Link, Switch, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
@@ -11,6 +11,7 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import Divider from "@material-ui/core/Divider";
+import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,6 +22,9 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     maxWidth: 360,
     backgroundColor: theme.palette.primary.light,
+  },
+  title: {
+    fontSize: 20,
   },
 }));
 
@@ -37,19 +41,14 @@ function BlogMain({ currentBlogState }) {
         style={{ margin: "30px", display: "inline-block" }}
       >
         <CardContent>
-          {/* <Typography
+          <Typography
             className={classes.title}
             color="textSecondary"
             gutterBottom
           >
-            {postInfo.title}
+            Current Blogs
           </Typography>
-          <Typography variant="body2" component="p">
-            {postInfo.content}
-            <br />
-          </Typography> */}
 
-          <h3>Current List of Blogs</h3>
           <List
             style={{ borderRadius: "20px", margin: "30px 30px 0 30px auto" }}
             component="nav"

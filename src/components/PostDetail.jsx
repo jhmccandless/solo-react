@@ -1,6 +1,5 @@
 import React from "react";
 import { connect } from "react-redux";
-import "../App.css";
 
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";

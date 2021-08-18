@@ -1,11 +1,10 @@
 import React from "react";
 import "./App.css";
 import { BrowserRouter, Route, Link, Switch, Redirect } from "react-router-dom";
-import { AppBar, Box } from "@material-ui/core";
+import { Box } from "@material-ui/core";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { ThemeProvider } from "@material-ui/styles";
 import { createTheme } from "@material-ui/core/styles";
-import { Toolbar } from "@material-ui/core/";
 import store from "./store";
 import { Provider } from "react-redux";
 
@@ -17,7 +16,6 @@ import PostDetail from "./components/PostDetail";
 
 import mainBackgroundImg from "./blog-background.jpeg";
 import headerBackgroundImg from "./header-background.jpeg";
-import { color } from "@material-ui/system";
 
 const theme = createTheme({});
 
@@ -42,6 +40,7 @@ function App() {
               <header
                 className="App-header"
                 style={{
+                  borderRadius: "7px",
                   backgroundImage: `url(${headerBackgroundImg})`,
                   backgroundPosition: "center",
                   backgroundSize: "cover",
