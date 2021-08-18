@@ -1,7 +1,12 @@
 import React from "react";
 import { connect } from "react-redux";
 import { BrowserRouter, Route, Link, Switch, Redirect } from "react-router-dom";
+
+import Card from "@material-ui/core/Card";
+import CardActions from "@material-ui/core/CardActions";
+import CardContent from "@material-ui/core/CardContent";
 import { makeStyles } from "@material-ui/core/styles";
+import Button from "@material-ui/core/Button";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
@@ -9,8 +14,7 @@ import Divider from "@material-ui/core/Divider";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: "100%",
-    maxWidth: 360,
+    minWidth: 400,
     backgroundColor: theme.palette.background.paper,
   },
   addBlog: {
@@ -28,38 +32,52 @@ function BlogMain({ currentBlogState }) {
   const classes = useStyles();
   return (
     <>
-      <div
+      <Card
         className={classes.root}
         style={{ margin: "30px", display: "inline-block" }}
       >
-        <h3>Current List of Blogs</h3>
-        <List
-          style={{ borderRadius: "20px", margin: "30px 30px 0 30px auto" }}
-          component="nav"
-          aria-label="secondary"
-        >
-          {currentBlogState.map((el, index) => {
-            return (
-              <div key={index}>
-                <Link
-                  style={{ color: "inherit", textDecoration: "inherit" }}
-                  to={`/post_detail/:${index}`}
-                >
-                  <ListItem button>
-                    <ListItemText primary={el.title} />
-                  </ListItem>
-                </Link>
-                <Divider />
-              </div>
-            );
-          })}
-          <div className={classes.addBlog}>
-            <ListItem button>
-              <ListItemText primary="Add Post" />
-            </ListItem>
+        <CardContent>
+          {/* <Typography
+            className={classes.title}
+            color="textSecondary"
+            gutterBottom
+          >
+            {postInfo.title}
+          </Typography>
+          <Typography variant="body2" component="p">
+            {postInfo.content}
+            <br />
+          </Typography> */}
+
+          <h3>Current List of Blogs</h3>
+          <List
+            style={{ borderRadius: "20px", margin: "30px 30px 0 30px auto" }}
+            component="nav"
+            aria-label="secondary"
+          >
+            {currentBlogState.map((el, index) => {
+              return (
+                <div key={index}>
+                  <Link
+                    style={{ color: "inherit", textDecoration: "inherit" }}
+                    to={`/post_detail/${index}`}
+                  >
+                    <ListItem button>
+                      <ListItemText primary={el.title} />
+                    </ListItem>
+                  </Link>
+                  <Divider />
+                </div>
+              );
+            })}
+          </List>
+        </CardContent>
+        <CardActions style={{ display: "inline-block" }}>
+          <div>
+            <Button size="small">Add Post</Button>
           </div>
-        </List>
-      </div>
+        </CardActions>
+      </Card>
 
       {/* {currentBlogState.map((el, index) => {
         return <li key={index}>{el.title}</li>;
