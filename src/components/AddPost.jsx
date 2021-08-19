@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-
+import { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
@@ -20,32 +20,61 @@ const useStyles = makeStyles({
   },
 });
 
-function AddPost() {
+function AddPost({ addBlogPost }) {
   const classes = useStyles();
+  const [blogTitle, setBlogTitle] = useState("");
+  const [blogPost, setBlogPost] = useState("");
+  function handleSubmit(event) {
+    event.preventDefault();
+    console.log(blogTitle, blogPost);
+    addBlogPost([blogTitle, blogPost]);
+  }
   return (
     <>
       <Card
         className={classes.root}
         style={{ margin: "30px", display: "inline-block" }}
       >
-        <CardContent>
-          <Typography
-            className={classes.title}
-            color="textSecondary"
-            gutterBottom
-          >
-            Post Info:
-          </Typography>
-          <Typography variant="body2" component="p">
-            Form Component
+        <form
+          onSubmit={(event) => {
+            handleSubmit(event);
+          }}
+        >
+          <CardContent>
+            <Typography
+              className={classes.title}
+              color="textSecondary"
+              gutterBottom
+            >
+              Post Info:
+            </Typography>
+
+            <label>Blog Title: </label>
             <br />
-          </Typography>
-        </CardContent>
-        <CardActions style={{ display: "inline-block" }}>
-          <div>
-            <Button size="small">Post Blog</Button>
-          </div>
-        </CardActions>
+            <input
+              type="text"
+              name="blogTitle"
+              onChange={(event) => setBlogTitle(event.target.value)}
+            ></input>
+            <br />
+            <br />
+            <label>Blog:</label>
+            <br />
+            <input
+              type="textBox"
+              name="blog"
+              onChange={(event) => setBlogPost(event.target.value)}
+            ></input>
+            <br />
+            <CardActions style={{ display: "inline-block" }}>
+              <div>
+                <Button type="submit" size="small">
+                  Post Blog
+                </Button>
+              </div>
+            </CardActions>
+          </CardContent>
+        </form>
       </Card>
     </>
   );
@@ -57,8 +86,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    function() {
-      dispatch();
+    addBlogPost: function (data) {
+      dispatch(this.addBlogPost(data));
     },
   };
 }
