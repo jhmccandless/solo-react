@@ -8,6 +8,8 @@ import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 
+import { addBlogPost } from "../action";
+
 const useStyles = makeStyles({
   root: {
     minWidth: 500,
@@ -26,8 +28,7 @@ function AddPost({ addBlogPost }) {
   const [blogPost, setBlogPost] = useState("");
   function handleSubmit(event) {
     event.preventDefault();
-    console.log(blogTitle, blogPost);
-    addBlogPost([blogTitle, blogPost]);
+    addBlogPost({ blogTitle, blogPost });
   }
   return (
     <>
@@ -62,7 +63,7 @@ function AddPost({ addBlogPost }) {
             <br />
             <input
               type="textBox"
-              name="blog"
+              name="blogPost"
               onChange={(event) => setBlogPost(event.target.value)}
             ></input>
             <br />
@@ -87,7 +88,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     addBlogPost: function (data) {
-      dispatch(this.addBlogPost(data));
+      dispatch(addBlogPost(data));
     },
   };
 }
