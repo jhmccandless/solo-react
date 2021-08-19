@@ -1,12 +1,14 @@
 import React from "react";
 import { connect } from "react-redux";
-
+import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
+
+import { deletePost } from "../action";
 
 const useStyles = makeStyles({
   root: {
@@ -20,8 +22,14 @@ const useStyles = makeStyles({
   },
 });
 
-function PostDetail({ postInfo }) {
+function PostDetail({ postInfo, deletePost }) {
   const classes = useStyles();
+  console.log(postInfo);
+
+  function handleClick() {
+    console.log("click");
+    deletePost(postInfo.id);
+  }
 
   return (
     <>
@@ -35,17 +43,25 @@ function PostDetail({ postInfo }) {
             color="textSecondary"
             gutterBottom
           >
-            {postInfo.title}
+            {postInfo.blogPosts.title}
           </Typography>
           <Typography variant="body2" component="p">
-            {postInfo.content}
+            {postInfo.blogPosts.content}
             <br />
           </Typography>
         </CardContent>
         <CardActions style={{ display: "inline-block" }}>
-          <div>
-            <Button size="small">Edit Post</Button>
-          </div>
+          <Button size="small">Edit Post</Button>
+          <Link style={{ textDecoration: "none" }} to="/dashboard">
+            <Button
+              size="small"
+              onClick={() => {
+                handleClick();
+              }}
+            >
+              Delete Post
+            </Button>
+          </Link>
         </CardActions>
       </Card>
     </>
@@ -55,14 +71,15 @@ function PostDetail({ postInfo }) {
 function mapStateToProps(state, ownProps) {
   let id = ownProps.match.params.index;
   return {
-    postInfo: state.blogPosts[id],
+    postInfo: { blogPosts: state.blogPosts[id], id },
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    function() {
-      dispatch();
+    deletePost: function (id) {
+      console.log("deleting");
+      dispatch(deletePost(id));
     },
   };
 }
