@@ -1,7 +1,7 @@
 const initiatState = {
   blogPosts: [
-    { title: "first blog", content: "lorem epsum" },
-    { title: "Second blog", content: "lorem epsum" },
+    { id: 0, title: "first blog", content: "lorem epsum" },
+    { id: 1, title: "Second blog", content: "lorem epsum" },
   ],
 };
 
@@ -20,10 +20,7 @@ function blog_reducer(state = initiatState, action) {
         ],
       };
     case "DELETE_POST":
-      let arr = state.blogPosts;
-      let newBlogPosts = state.blogPosts.splice(Number(action.data), 1);
-      console.log(arr);
-      console.log(action.data);
+      state.blogPosts.splice(Number(action.data), 1);
       return {
         ...state,
       };

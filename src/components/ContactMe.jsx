@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 
 import { makeStyles } from "@material-ui/core/styles";
@@ -22,30 +22,54 @@ const useStyles = makeStyles({
 
 function ContactMe() {
   const classes = useStyles();
+
+  const [messageTitle, setMessageTitle] = useState("");
+  const [message, setMessage] = useState("");
+
   return (
     <>
       <Card
         className={classes.root}
         style={{ margin: "30px", display: "inline-block" }}
       >
-        <CardContent>
-          <Typography
-            className={classes.title}
-            color="textSecondary"
-            gutterBottom
-          >
-            Contact!!!
-          </Typography>
-          <Typography variant="body2" component="p">
-            message form component
+        <form
+        // onSubmit={(event) => {
+        //   handleSubmit(event);
+        // }}
+        >
+          <CardContent>
+            <Typography
+              className={classes.title}
+              color="textSecondary"
+              gutterBottom
+            >
+              Contact Molly!
+            </Typography>
+
+            <label>Message Title </label>
             <br />
-          </Typography>
-        </CardContent>
-        <CardActions style={{ display: "inline-block" }}>
-          <div>
-            <Button size="small">Send Message</Button>
-          </div>
-        </CardActions>
+            <input
+              type="text"
+              name="messageTitle"
+              onChange={(event) => setMessageTitle(event.target.value)}
+            ></input>
+            <br />
+            <br />
+            <label>Message</label>
+            <br />
+            <input
+              type="textBox"
+              name="message"
+              onChange={(event) => setMessage(event.target.value)}
+            ></input>
+            <br />
+            <CardActions style={{ display: "inline-block" }}>
+              <Button type="submit" size="small">
+                Send Message
+              </Button>
+            </CardActions>
+          </CardContent>
+        </form>
       </Card>
     </>
   );
@@ -55,17 +79,17 @@ function mapStateToProps(state) {
   return {};
 }
 
-function mapDispatchToProps(dispatch) {
-  return {
-    function() {
-      dispatch();
-    },
-  };
-}
+// function mapDispatchToProps(dispatch) {
+//   return {
+//     sendMessage: function (data) {
+//       dispatch(sendMessage(data));
+//     },
+//   };
+// }
 
 let connectedContactMe = connect(
-  mapStateToProps,
-  mapDispatchToProps
+  mapStateToProps
+  // mapDispatchToProps
 )(ContactMe);
 
 export default connectedContactMe;

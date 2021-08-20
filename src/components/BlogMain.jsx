@@ -72,9 +72,9 @@ function BlogMain({ currentBlogState }) {
           </List>
         </CardContent>
         <CardActions style={{ display: "inline-block" }}>
-          <div>
+          <Link style={{ textDecoration: "none" }} to="/add_post">
             <Button size="small">Add Post</Button>
-          </div>
+          </Link>
         </CardActions>
       </Card>
 

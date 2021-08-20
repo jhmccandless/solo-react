@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-
+import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
@@ -42,9 +42,9 @@ function AboutMe() {
           </Typography>
         </CardContent>
         <CardActions style={{ display: "inline-block" }}>
-          <div>
-            <Button size="small">Send Message</Button>
-          </div>
+          <Link style={{ textDecoration: "none" }} to="/contact_me">
+            <Button size="small">Contact Me</Button>
+          </Link>
         </CardActions>
       </Card>
     </>

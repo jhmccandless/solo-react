@@ -2,6 +2,8 @@ import React from "react";
 import { connect } from "react-redux";
 import { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import { Link } from "react-router-dom";
+
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
@@ -68,11 +70,12 @@ function AddPost({ addBlogPost }) {
             ></input>
             <br />
             <CardActions style={{ display: "inline-block" }}>
-              <div>
-                <Button type="submit" size="small">
-                  Post Blog
-                </Button>
-              </div>
+              <Button type="submit" size="small">
+                Post Blog
+              </Button>
+              <Link style={{ textDecoration: "none" }} to="/dashboard">
+                <Button size="small">Dashboard</Button>
+              </Link>
             </CardActions>
           </CardContent>
         </form>

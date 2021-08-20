@@ -24,12 +24,17 @@ const useStyles = makeStyles({
 
 function PostDetail({ postInfo, deletePost }) {
   const classes = useStyles();
-  console.log(postInfo);
 
   function handleClick() {
-    console.log("click");
+    console.log("deleted id: ", postInfo.id);
     deletePost(postInfo.id);
   }
+
+  // function handleEditClick(event) {
+  //   event.target.innerHTML === "Edit Post"
+  //     ? (event.target.innerHTML = "done")
+  //     : (event.target.innerHTML = "Edit Post");
+  // }
 
   return (
     <>
@@ -51,7 +56,27 @@ function PostDetail({ postInfo, deletePost }) {
           </Typography>
         </CardContent>
         <CardActions style={{ display: "inline-block" }}>
-          <Button size="small">Edit Post</Button>
+          {/* <Button
+            className="editButton"
+            size="small"
+            style={{}}
+            value="Edit Post"
+            onClick={(event) => {
+              handleEditClick(event);
+            }}
+          >
+            Edit Post
+          </Button>
+          <Button
+            className="doneButton"
+            style={{ display: "none" }}
+            size="small"
+            onClick={(event) => {
+              handleEditClick(event);
+            }}
+          >
+            Done
+          </Button> */}
           <Link style={{ textDecoration: "none" }} to="/dashboard">
             <Button
               size="small"
@@ -61,6 +86,9 @@ function PostDetail({ postInfo, deletePost }) {
             >
               Delete Post
             </Button>
+          </Link>
+          <Link style={{ textDecoration: "none" }} to="/dashboard">
+            <Button size="small">Dashboard</Button>
           </Link>
         </CardActions>
       </Card>
@@ -78,7 +106,6 @@ function mapStateToProps(state, ownProps) {
 function mapDispatchToProps(dispatch) {
   return {
     deletePost: function (id) {
-      console.log("deleting");
       dispatch(deletePost(id));
     },
   };
