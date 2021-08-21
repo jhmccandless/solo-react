@@ -67,7 +67,7 @@ function App() {
                       }}
                       to="/dashboard"
                     >
-                      Blogging Molly
+                      Typical Forum
                     </Link>
                   </Box>
                   <Box margin="0 20px">
@@ -103,7 +103,7 @@ function App() {
                       }}
                       to="/about_me"
                     >
-                      About Me
+                      About Us
                     </Link>
                   </Box>
                   <Box margin="0 7% 0 20px">
@@ -115,7 +115,7 @@ function App() {
                       }}
                       to="/contact_me"
                     >
-                      Contact Me
+                      Contact Us
                     </Link>
                   </Box>
                 </Box>

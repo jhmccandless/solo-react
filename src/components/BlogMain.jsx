@@ -10,6 +10,8 @@ import Button from "@material-ui/core/Button";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
+// import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
+
 import Divider from "@material-ui/core/Divider";
 import Typography from "@material-ui/core/Typography";
 
@@ -34,6 +36,7 @@ const useStyles = makeStyles((theme) => ({
 
 function BlogMain({ currentBlogState }) {
   const classes = useStyles();
+
   return (
     <>
       <Card
@@ -46,7 +49,7 @@ function BlogMain({ currentBlogState }) {
             color="textSecondary"
             gutterBottom
           >
-            Current Blogs
+            Current Posts
           </Typography>
 
           <List
@@ -61,8 +64,17 @@ function BlogMain({ currentBlogState }) {
                     style={{ color: "inherit", textDecoration: "inherit" }}
                     to={`/post_detail/${index}`}
                   >
-                    <ListItem button>
-                      <ListItemText primary={el.title} />
+                    <ListItem
+                      style={{
+                        height: "100px",
+                        width: "350px",
+                        textOverflow: "ellipsis",
+                        whiteSpace: "nowrap",
+                        overflow: "hidden",
+                      }}
+                      button
+                    >
+                      <ListItemText primary={el.title} secondary={el.content} />
                     </ListItem>
                   </Link>
                   <Divider />

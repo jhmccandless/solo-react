@@ -4,6 +4,7 @@ import { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Link } from "react-router-dom";
 
+import TextField from "@material-ui/core/TextField";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
@@ -26,8 +27,10 @@ const useStyles = makeStyles({
 
 function AddPost({ addBlogPost }) {
   const classes = useStyles();
+
   const [blogTitle, setBlogTitle] = useState("");
   const [blogPost, setBlogPost] = useState("");
+
   function handleSubmit(event) {
     event.preventDefault();
     addBlogPost({ blogTitle, blogPost });
@@ -52,26 +55,33 @@ function AddPost({ addBlogPost }) {
               Post Info:
             </Typography>
 
-            <label>Blog Title: </label>
             <br />
-            <input
+            <TextField
+              id="outlined-basic"
+              label="Post Title"
+              variant="outlined"
               type="text"
               name="blogTitle"
               onChange={(event) => setBlogTitle(event.target.value)}
-            ></input>
+            />
             <br />
             <br />
-            <label>Blog:</label>
-            <br />
-            <input
-              type="textBox"
+            <TextField
+              style={{ width: "450px" }}
+              minRows={6}
+              id="outlined-textarea"
+              label="Post Body"
+              multiline
+              variant="outlined"
+              type="text"
               name="blogPost"
               onChange={(event) => setBlogPost(event.target.value)}
-            ></input>
+            />
+            <br />
             <br />
             <CardActions style={{ display: "inline-block" }}>
               <Button type="submit" size="small">
-                Post Blog
+                Post Info
               </Button>
               <Link style={{ textDecoration: "none" }} to="/dashboard">
                 <Button size="small">Dashboard</Button>

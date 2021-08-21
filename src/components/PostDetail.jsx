@@ -40,7 +40,7 @@ function PostDetail({ postInfo, deletePost }) {
     <>
       <Card
         className={classes.root}
-        style={{ margin: "30px", display: "inline-block" }}
+        style={{ margin: "30px", display: "inline-block", width: "500px" }}
       >
         <CardContent>
           <Typography

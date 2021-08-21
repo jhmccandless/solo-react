@@ -12,6 +12,13 @@ export function deletePost(data) {
   };
 }
 
+// export function addToLocalStorage(data) {
+//   return {
+//     type: "LOCALSTORAGE_ADD",
+//     data,
+//   };
+// }
+
 // export function updatePostInstance(index, key, value) {
 //   return {
 //     type: "UPDATE_POST",

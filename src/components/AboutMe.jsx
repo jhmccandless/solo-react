@@ -26,7 +26,7 @@ function AboutMe() {
     <>
       <Card
         className={classes.root}
-        style={{ margin: "30px", display: "inline-block" }}
+        style={{ margin: "30px", display: "inline-block", width: "500px" }}
       >
         <CardContent>
           <Typography
@@ -34,16 +34,26 @@ function AboutMe() {
             color="textSecondary"
             gutterBottom
           >
-            Hi, I'm Molly!
+            Welcom to the Typical Forum!
           </Typography>
           <Typography variant="body2" component="p">
-            some random info about me
+            Founded in 2008, Stack Overflow’s public platform is used by nearly
+            everyone who codes to learn, share their knowledge, collaborate, and
+            build their careers. Our products and tools help developers and
+            technologists in life and at work. These products include Stack
+            Overflow for Teams, Stack Overflow Advertising, and Stack Overflow
+            for Talent and Jobs. Stack Overflow for Teams, our core SaaS
+            collaboration product, is helping thousands of companies around the
+            world as the transition to remote work, address business continuity
+            challenges, and undergo digital transformation. Whether it’s on
+            Stack Overflow or within Stack Overflow for Teams, community is at
+            the center of all that we do.
             <br />
           </Typography>
         </CardContent>
         <CardActions style={{ display: "inline-block" }}>
           <Link style={{ textDecoration: "none" }} to="/contact_me">
-            <Button size="small">Contact Me</Button>
+            <Button size="small">Contact Us</Button>
           </Link>
         </CardActions>
       </Card>
