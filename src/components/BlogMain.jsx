@@ -57,30 +57,35 @@ function BlogMain({ currentBlogState }) {
             component="nav"
             aria-label="secondary"
           >
-            {currentBlogState.map((el, index) => {
-              return (
-                <div key={index}>
-                  <Link
-                    style={{ color: "inherit", textDecoration: "inherit" }}
-                    to={`/post_detail/${index}`}
-                  >
-                    <ListItem
-                      style={{
-                        height: "100px",
-                        width: "350px",
-                        textOverflow: "ellipsis",
-                        whiteSpace: "nowrap",
-                        overflow: "hidden",
-                      }}
-                      button
-                    >
-                      <ListItemText primary={el.title} secondary={el.content} />
-                    </ListItem>
-                  </Link>
-                  <Divider />
-                </div>
-              );
-            })}
+            {currentBlogState.length !== 0
+              ? currentBlogState.map((el, index) => {
+                  return (
+                    <div key={index}>
+                      <Link
+                        style={{ color: "inherit", textDecoration: "inherit" }}
+                        to={`/post_detail/${index}`}
+                      >
+                        <ListItem
+                          style={{
+                            height: "75px",
+                            width: "350px",
+                            textOverflow: "ellipsis",
+                            whiteSpace: "nowrap",
+                            overflow: "hidden",
+                          }}
+                          button
+                        >
+                          <ListItemText
+                            primary={el.title}
+                            secondary={el.content}
+                          />
+                        </ListItem>
+                      </Link>
+                      <Divider />
+                    </div>
+                  );
+                })
+              : "No Posts to Show! :("}
           </List>
         </CardContent>
         <CardActions style={{ display: "inline-block" }}>
