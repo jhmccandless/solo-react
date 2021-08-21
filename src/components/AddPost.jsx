@@ -34,6 +34,7 @@ function AddPost({ addBlogPost }) {
   function handleSubmit(event) {
     event.preventDefault();
     addBlogPost({ blogTitle, blogPost });
+    event.target.reset();
   }
   return (
     <>
@@ -62,6 +63,7 @@ function AddPost({ addBlogPost }) {
               variant="outlined"
               type="text"
               name="blogTitle"
+              required
               onChange={(event) => setBlogTitle(event.target.value)}
             />
             <br />
@@ -75,6 +77,7 @@ function AddPost({ addBlogPost }) {
               variant="outlined"
               type="text"
               name="blogPost"
+              required
               onChange={(event) => setBlogPost(event.target.value)}
             />
             <br />

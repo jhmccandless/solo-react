@@ -41,7 +41,7 @@ function BlogMain({ currentBlogState }) {
     <>
       <Card
         className={classes.root}
-        style={{ margin: "30px", display: "inline-block" }}
+        style={{ margin: "30px 15% 0 15%", display: "inline-block" }}
       >
         <CardContent>
           <Typography
@@ -53,7 +53,7 @@ function BlogMain({ currentBlogState }) {
           </Typography>
 
           <List
-            style={{ borderRadius: "20px", margin: "30px 30px 0 30px auto" }}
+            style={{ borderRadius: "20px", margin: "auto" }}
             component="nav"
             aria-label="secondary"
           >

@@ -31,8 +31,9 @@ function ContactMe() {
   function handleSubmit(event) {
     console.log("handling");
     event.preventDefault();
-    alert(`Message Title: ${messageTitle}
-Message: ${message}`);
+    // alert(`Message Title: ${messageTitle}
+    // Message: ${message}`);
+    event.target.reset();
   }
 
   return (
@@ -57,6 +58,7 @@ Message: ${message}`);
 
             <br />
             <TextField
+              required
               id="outlined-basic"
               label="Message Title"
               variant="outlined"
@@ -67,6 +69,7 @@ Message: ${message}`);
             <br />
             <br />
             <TextField
+              required
               style={{ width: "450px" }}
               minRows={6}
               id="outlined-textarea"

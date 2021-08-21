@@ -25,116 +25,118 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline>
           <BrowserRouter>
-            <div
-              className="App"
-              style={{
-                backgroundImage: `url(${mainBackgroundImg} )`,
-                backgroundPosition: "center",
-                backgroundSize: "cover",
-                backgroundRepeat: "no-repeat",
-                width: "100vw",
-                minHeight: "100vh",
-                // fontFamily: "cursive",
-              }}
-            >
-              <Box margin="0 15% 30% 15%">
-                <header
-                  className="App-header"
-                  style={{
-                    borderRadius: "7px",
-                    backgroundImage: `url(${headerBackgroundImg})`,
-                    backgroundPosition: "center",
-                    backgroundSize: "cover",
-                    backgroundRepeat: "no-repeat",
-                    height: "75px",
-                    margin: "0px 10px 0px 10px",
-                  }}
-                >
-                  <Box display="flex" alignItems="center" width={"100%"}>
-                    <Box
-                      flexGrow={1}
-                      style={{
-                        textAlign: "left",
-                        margin: "0 0 0 8%",
-                      }}
-                    >
-                      <Link
+            <Box display="flex" flexWrap="wrap" justifyContent="center">
+              <div
+                className="App"
+                style={{
+                  backgroundImage: `url(${mainBackgroundImg} )`,
+                  backgroundPosition: "center",
+                  backgroundSize: "cover",
+                  backgroundRepeat: "no-repeat",
+                  width: "100vw",
+                  minHeight: "100vh",
+                  // fontFamily: "cursive",
+                }}
+              >
+                <Box margin="0 15% 0 15%">
+                  <header
+                    className="App-header"
+                    style={{
+                      borderRadius: "7px",
+                      backgroundImage: `url(${headerBackgroundImg})`,
+                      backgroundPosition: "center",
+                      backgroundSize: "cover",
+                      backgroundRepeat: "no-repeat",
+                      height: "75px",
+                      margin: "0px 10px 0px 10px",
+                    }}
+                  >
+                    <Box display="flex" alignItems="center" width={"100%"}>
+                      <Box
+                        flexGrow={1}
                         style={{
-                          textDecoration: "none",
-                          fontSize: "calc(15px + 2vmin)",
-                          fontWeight: "bold",
-                          color: "rgb(255, 143, 143)",
-                          textShadow: "1px 1px 4px #000000",
+                          textAlign: "left",
+                          margin: "0 0 0 8%",
                         }}
-                        to="/dashboard"
                       >
-                        Typical Forum
-                      </Link>
+                        <Link
+                          style={{
+                            textDecoration: "none",
+                            fontSize: "calc(15px + 2vmin)",
+                            fontWeight: "bold",
+                            color: "rgb(255, 143, 143)",
+                            textShadow: "1px 1px 4px #000000",
+                          }}
+                          to="/dashboard"
+                        >
+                          Typical Forum
+                        </Link>
+                      </Box>
+                      <Box margin="0 20px">
+                        <Link
+                          style={{
+                            textDecoration: "none",
+                            color: "rgb(255, 143, 143)",
+                            textShadow: "1px 1px 4px #000000",
+                          }}
+                          to="/dashboard"
+                        >
+                          Dashboard
+                        </Link>
+                      </Box>
+                      <Box margin="0 20px">
+                        <Link
+                          style={{
+                            textDecoration: "none",
+                            color: "rgb(255, 143, 143)",
+                            textShadow: "1px 1px 4px #000000",
+                          }}
+                          to="/add_post"
+                        >
+                          Add Post
+                        </Link>
+                      </Box>
+                      <Box margin="0 20px">
+                        <Link
+                          style={{
+                            textDecoration: "none",
+                            color: "rgb(255, 143, 143)",
+                            textShadow: "1px 1px 4px #000000",
+                          }}
+                          to="/about_me"
+                        >
+                          About Us
+                        </Link>
+                      </Box>
+                      <Box margin="0 7% 0 20px">
+                        <Link
+                          style={{
+                            textDecoration: "none",
+                            color: "rgb(255, 143, 143)",
+                            textShadow: "1px 1px 4px #000000",
+                          }}
+                          to="/contact_me"
+                        >
+                          Contact Us
+                        </Link>
+                      </Box>
                     </Box>
-                    <Box margin="0 20px">
-                      <Link
-                        style={{
-                          textDecoration: "none",
-                          color: "rgb(255, 143, 143)",
-                          textShadow: "1px 1px 4px #000000",
-                        }}
-                        to="/dashboard"
-                      >
-                        Dashboard
-                      </Link>
-                    </Box>
-                    <Box margin="0 20px">
-                      <Link
-                        style={{
-                          textDecoration: "none",
-                          color: "rgb(255, 143, 143)",
-                          textShadow: "1px 1px 4px #000000",
-                        }}
-                        to="/add_post"
-                      >
-                        Add Post
-                      </Link>
-                    </Box>
-                    <Box margin="0 20px">
-                      <Link
-                        style={{
-                          textDecoration: "none",
-                          color: "rgb(255, 143, 143)",
-                          textShadow: "1px 1px 4px #000000",
-                        }}
-                        to="/about_me"
-                      >
-                        About Us
-                      </Link>
-                    </Box>
-                    <Box margin="0 7% 0 20px">
-                      <Link
-                        style={{
-                          textDecoration: "none",
-                          color: "rgb(255, 143, 143)",
-                          textShadow: "1px 1px 4px #000000",
-                        }}
-                        to="/contact_me"
-                      >
-                        Contact Us
-                      </Link>
-                    </Box>
-                  </Box>
-                </header>
-                <Switch>
-                  <Route exact path="/dashboard" component={BlogMain} />
-                  <Route path="/add_post" component={AddPost} />
-                  <Route path="/contact_me" component={ContactMe} />
-                  <Route path="/about_me" component={AboutMe} />
+                  </header>
+                  <Switch>
+                    <Route exact path="/dashboard" component={BlogMain} />
+                    <Route path="/add_post" component={AddPost} />
+                    <Route path="/contact_me" component={ContactMe} />
+                    <Route path="/about_me" component={AboutMe} />
 
-                  <Route path="/post_detail/:index" component={PostDetail} />
-                  <Route path="/delete_confirm/:index" />
-                  <Route path="*">
-                    <Redirect to="/dashboard" />
-                  </Route>
-                </Switch>
-              </Box>
-            </div>
+                    <Route path="/post_detail/:index" component={PostDetail} />
+                    <Route path="/delete_confirm/:index" />
+                    <Route path="*">
+                      <Redirect to="/dashboard" />
+                    </Route>
+                  </Switch>
+                </Box>
+              </div>
+            </Box>
           </BrowserRouter>
         </CssBaseline>
       </ThemeProvider>

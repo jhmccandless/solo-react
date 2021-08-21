@@ -8,6 +8,10 @@
   }
 }
 
+body {
+  background-color: aquamarine;
+}
+
 .App-header {
   height: 100px;
   display: flex;
