@@ -27,6 +27,9 @@ function ContactMe() {
 
   const [messageTitle, setMessageTitle] = useState("");
   const [message, setMessage] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
 
   function handleSubmit(event) {
     console.log("handling");
@@ -56,6 +59,36 @@ function ContactMe() {
               Contact The Typical Forum!
             </Typography>
 
+            <br />
+            <TextField
+              required
+              id="outlined-basic"
+              label="First Name"
+              variant="outlined"
+              type="text"
+              name="first_name"
+              onChange={(event) => setFirstName(event.target.value)}
+            ></TextField>
+            <br />
+            <TextField
+              required
+              id="outlined-basic"
+              label="Last Name"
+              variant="outlined"
+              type="text"
+              name="last_name"
+              onChange={(event) => setLastName(event.target.value)}
+            ></TextField>
+            <br />
+            <TextField
+              required
+              id="outlined-basic"
+              label="Email"
+              variant="outlined"
+              type="text"
+              name="email"
+              onChange={(event) => setEmail(event.target.value)}
+            ></TextField>
             <br />
             <TextField
               required
