@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import { getChuck } from "../services/chuck";
 
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
@@ -36,6 +37,18 @@ const useStyles = makeStyles((theme) => ({
 
 function BlogMain({ currentBlogState }) {
   const classes = useStyles();
+
+  const [chuck, setChuck] = useState([]);
+
+  useEffect(() => {
+    let mounted = true;
+    getChuck().then((items) => {
+      if (mounted) {
+        setChuck(items);
+      }
+    });
+    return () => (mounted = false);
+  }, []);
 
   return (
     <>
@@ -95,6 +108,14 @@ function BlogMain({ currentBlogState }) {
         </CardActions>
       </Card>
 
+      <Card
+        className={classes.root}
+        style={{ margin: "30px 15% 0 15%", display: "inline-block" }}
+      >
+        <CardContent>
+          <Typography>{chuck.value}</Typography>
+        </CardContent>
+      </Card>
       {/* {currentBlogState.map((el, index) => {
         return <li key={index}>{el.title}</li>;
       })} */}
