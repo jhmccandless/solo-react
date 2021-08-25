@@ -8,6 +8,7 @@ import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
+// import { CssBaseline } from "@material-ui/core";
 // import { addToLocalStorage } from "../action";
 
 const useStyles = makeStyles({
@@ -32,10 +33,11 @@ function ContactMe() {
   const [email, setEmail] = useState("");
 
   function handleSubmit(event) {
-    console.log("handling");
     event.preventDefault();
     // alert(`Message Title: ${messageTitle}
     // Message: ${message}`);
+    let currentStorage = `${localStorage.getItem("message")}, ${message}`;
+    localStorage.setItem("message", currentStorage);
     event.target.reset();
   }
 
@@ -70,6 +72,7 @@ function ContactMe() {
               onChange={(event) => setFirstName(event.target.value)}
             ></TextField>
             <br />
+            <br />
             <TextField
               required
               id="outlined-basic"
@@ -80,6 +83,7 @@ function ContactMe() {
               onChange={(event) => setLastName(event.target.value)}
             ></TextField>
             <br />
+            <br />
             <TextField
               required
               id="outlined-basic"
@@ -89,6 +93,7 @@ function ContactMe() {
               name="email"
               onChange={(event) => setEmail(event.target.value)}
             ></TextField>
+            <br />
             <br />
             <TextField
               required

@@ -1,5 +1,5 @@
-export function getChuck() {
-  return fetch("https://api.chucknorris.io/jokes/random").then((data) =>
+export async function getChuck() {
+  return await fetch("https://api.chucknorris.io/jokes/random").then((data) =>
     data.json()
   );
 }
