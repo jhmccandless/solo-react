@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 
+import "../contact.css";
 import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
@@ -13,7 +14,9 @@ import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles({
   root: {
-    minWidth: 500,
+    width: "80%",
+    margin: "30px",
+    display: "inline-block",
   },
   title: {
     fontSize: 20,
@@ -43,10 +46,7 @@ function ContactMe() {
 
   return (
     <>
-      <Card
-        className={classes.root}
-        style={{ margin: "30px", display: "inline-block" }}
-      >
+      <Card className={classes.root}>
         <form
           onSubmit={(event) => {
             handleSubmit(event);
@@ -71,6 +71,8 @@ function ContactMe() {
               name="first_name"
               onChange={(event) => setFirstName(event.target.value)}
             ></TextField>
+            <br />
+            <br />
             <TextField
               required
               id="outlined-basic"
@@ -105,8 +107,8 @@ function ContactMe() {
             <br />
             <br />
             <TextField
+              className="message"
               required
-              style={{ width: "450px" }}
               minRows={6}
               id="outlined-textarea"
               label="Message"

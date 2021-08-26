@@ -1,0 +1,9 @@
+.post-body-field {
+  width: 450px;
+}
+
+@media screen and (max-width: 920px) {
+  .post-body-field {
+    width: inherit;
+  }
+}

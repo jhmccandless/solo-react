@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Link } from "react-router-dom";
+import "../addPost.css";
 
 import TextField from "@material-ui/core/TextField";
 import Card from "@material-ui/core/Card";
@@ -15,7 +16,9 @@ import { addBlogPost } from "../action";
 
 const useStyles = makeStyles({
   root: {
-    minWidth: 500,
+    width: "80%",
+    margin: "30px",
+    display: "inline-block",
   },
   title: {
     fontSize: 20,
@@ -38,10 +41,7 @@ function AddPost({ addBlogPost }) {
   }
   return (
     <>
-      <Card
-        className={classes.root}
-        style={{ margin: "30px", display: "inline-block" }}
-      >
+      <Card className={classes.root}>
         <form
           onSubmit={(event) => {
             handleSubmit(event);
@@ -69,7 +69,7 @@ function AddPost({ addBlogPost }) {
             <br />
             <br />
             <TextField
-              style={{ width: "450px" }}
+              className="post-body-field"
               minRows={6}
               id="outlined-textarea"
               label="Post Body"

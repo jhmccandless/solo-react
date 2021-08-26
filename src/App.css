@@ -62,12 +62,16 @@
     color: red;
   }
   .App-header {
-    height: 200px;
+    height: 175px;
+    font-size: 20px;
   }
   .inner-header-box {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+  .site-name {
+    font-size: 25px;
   }
 }
 

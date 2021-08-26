@@ -19,7 +19,7 @@ import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: 450,
+    width: "80%",
     backgroundColor: theme.palette.background.paper,
     margin: "30px 0 0 0",
     display: "inline-block",

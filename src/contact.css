@@ -1,0 +1,9 @@
+.message {
+  width: 450px;
+}
+
+@media screen and (max-width: 920px) {
+  .message {
+    width: inherit;
+  }
+}

@@ -10,7 +10,9 @@ import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles({
   root: {
-    minWidth: 500,
+    margin: "30px",
+    display: "inline-block",
+    width: "80%",
   },
   title: {
     fontSize: 20,
@@ -24,10 +26,7 @@ function AboutMe() {
   const classes = useStyles();
   return (
     <>
-      <Card
-        className={classes.root}
-        style={{ margin: "30px", display: "inline-block", width: "500px" }}
-      >
+      <Card className={classes.root}>
         <CardContent>
           <Typography
             className={classes.title}

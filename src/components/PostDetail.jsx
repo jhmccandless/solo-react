@@ -12,7 +12,9 @@ import { deletePost } from "../action";
 
 const useStyles = makeStyles({
   root: {
-    minWidth: 500,
+    width: "80%",
+    margin: "30px",
+    display: "inline-block",
   },
   title: {
     fontSize: 20,
@@ -38,10 +40,7 @@ function PostDetail({ postInfo, deletePost }) {
 
   return (
     <>
-      <Card
-        className={classes.root}
-        style={{ margin: "30px", display: "inline-block", width: "500px" }}
-      >
+      <Card className={classes.root}>
         <CardContent>
           <Typography
             className={classes.title}
