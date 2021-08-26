@@ -71,8 +71,6 @@ function ContactMe() {
               name="first_name"
               onChange={(event) => setFirstName(event.target.value)}
             ></TextField>
-            <br />
-            <br />
             <TextField
               required
               id="outlined-basic"

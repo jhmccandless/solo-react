@@ -1,0 +1,18 @@
+.item-click {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.item-decor {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.button-action {
+  display: inline-block;
+}
+
+.button-link {
+  text-decoration: none;
+}

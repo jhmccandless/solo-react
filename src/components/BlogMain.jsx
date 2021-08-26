@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { getChuck } from "../services/chuck";
+import "../blogMain.css";
 
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
@@ -18,13 +19,15 @@ import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    minWidth: 400,
+    width: 450,
     backgroundColor: theme.palette.background.paper,
+    margin: "30px 0 0 0",
+    display: "inline-block",
   },
   addBlog: {
     width: "100%",
     maxWidth: 360,
-    backgroundColor: theme.palette.primary.light,
+    display: "inline-block",
   },
   title: {
     fontSize: 20,
@@ -52,10 +55,7 @@ function BlogMain({ currentBlogState }) {
 
   return (
     <>
-      <Card
-        className={classes.root}
-        style={{ margin: "30px 15% 0 15%", display: "inline-block" }}
-      >
+      <Card className={classes.root}>
         <CardContent>
           <Typography
             className={classes.title}
@@ -65,29 +65,13 @@ function BlogMain({ currentBlogState }) {
             Current Posts
           </Typography>
 
-          <List
-            style={{ borderRadius: "20px", margin: "auto" }}
-            component="nav"
-            aria-label="secondary"
-          >
+          <List className="list-content" component="nav" aria-label="secondary">
             {currentBlogState.length !== 0
               ? currentBlogState.map((el, index) => {
                   return (
                     <div key={index}>
-                      <Link
-                        style={{ color: "inherit", textDecoration: "inherit" }}
-                        to={`/post_detail/${index}`}
-                      >
-                        <ListItem
-                          style={{
-                            height: "75px",
-                            width: "350px",
-                            textOverflow: "ellipsis",
-                            whiteSpace: "nowrap",
-                            overflow: "hidden",
-                          }}
-                          button
-                        >
+                      <Link className="item-click" to={`/post_detail/${index}`}>
+                        <ListItem className="item-decor" button>
                           <ListItemText
                             primary={el.title}
                             secondary={el.content}
@@ -101,17 +85,14 @@ function BlogMain({ currentBlogState }) {
               : "No Posts to Show! :("}
           </List>
         </CardContent>
-        <CardActions style={{ display: "inline-block" }}>
-          <Link style={{ textDecoration: "none" }} to="/add_post">
+        <CardActions className={classes.addBlog}>
+          <Link className="button-link" to="/add_post">
             <Button size="small">Add Post</Button>
           </Link>
         </CardActions>
       </Card>
-
-      <Card
-        className={classes.root}
-        style={{ margin: "30px 15% 0 15%", display: "inline-block" }}
-      >
+      <br />
+      <Card className={classes.root}>
         <CardContent>
           <Typography>{chuck.value}</Typography>
         </CardContent>

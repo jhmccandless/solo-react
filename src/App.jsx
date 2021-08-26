@@ -14,9 +14,6 @@ import ContactMe from "./components/ContactMe";
 import AddPost from "./components/AddPost";
 import PostDetail from "./components/PostDetail";
 
-import mainBackgroundImg from "./blog-background.jpeg";
-import headerBackgroundImg from "./header-background.jpeg";
-
 const theme = createTheme({});
 
 function App() {
@@ -26,97 +23,32 @@ function App() {
         <CssBaseline>
           <BrowserRouter>
             <Box display="flex" flexWrap="wrap" justifyContent="center">
-              <div
-                className="App"
-                style={{
-                  backgroundImage: `url(${mainBackgroundImg} )`,
-                  backgroundPosition: "center",
-                  backgroundSize: "cover",
-                  backgroundRepeat: "no-repeat",
-                  width: "100vw",
-                  minHeight: "100vh",
-                  // fontFamily: "cursive",
-                }}
-              >
-                <Box margin="0 15% 0 15%">
-                  <header
-                    className="App-header"
-                    style={{
-                      borderRadius: "7px",
-                      backgroundImage: `url(${headerBackgroundImg})`,
-                      backgroundPosition: "center",
-                      backgroundSize: "cover",
-                      backgroundRepeat: "no-repeat",
-                      height: "75px",
-                      margin: "0px 10px 0px 10px",
-                    }}
-                  >
-                    <Box display="flex" alignItems="center" width={"100%"}>
-                      <Box
-                        flexGrow={1}
-                        style={{
-                          textAlign: "left",
-                          margin: "0 0 0 8%",
-                        }}
-                      >
-                        <Link
-                          style={{
-                            textDecoration: "none",
-                            fontSize: "calc(15px + 2vmin)",
-                            fontWeight: "bold",
-                            color: "rgb(255, 143, 143)",
-                            textShadow: "1px 1px 4px #000000",
-                          }}
-                          to="/dashboard"
-                        >
+              <div className="App">
+                <Box className="header-box">
+                  <header className="App-header">
+                    <Box className="inner-header-box">
+                      <Box className="site-name-box">
+                        <Link className="site-name" to="/dashboard">
                           Typical Forum
                         </Link>
                       </Box>
-                      <Box margin="0 20px">
-                        <Link
-                          style={{
-                            textDecoration: "none",
-                            color: "rgb(255, 143, 143)",
-                            textShadow: "1px 1px 4px #000000",
-                          }}
-                          to="/dashboard"
-                        >
+                      <Box className="link-box">
+                        <Link className="link-style" to="/dashboard">
                           Dashboard
                         </Link>
                       </Box>
-                      <Box margin="0 20px">
-                        <Link
-                          style={{
-                            textDecoration: "none",
-                            color: "rgb(255, 143, 143)",
-                            textShadow: "1px 1px 4px #000000",
-                          }}
-                          to="/add_post"
-                        >
+                      <Box className="link-box">
+                        <Link className="link-style" to="/add_post">
                           Add Post
                         </Link>
                       </Box>
-                      <Box margin="0 20px">
-                        <Link
-                          style={{
-                            textDecoration: "none",
-                            color: "rgb(255, 143, 143)",
-                            textShadow: "1px 1px 4px #000000",
-                          }}
-                          to="/about_me"
-                        >
+                      <Box className="link-box">
+                        <Link className="link-style" to="/about_me">
                           About Us
                         </Link>
                       </Box>
-                      <Box margin="0 7% 0 20px">
-                        <Link
-                          style={{
-                            textDecoration: "none",
-                            color: "rgb(255, 143, 143)",
-                            textShadow: "1px 1px 4px #000000",
-                          }}
-                          to="/contact_me"
-                        >
+                      <Box className="link-box">
+                        <Link className="link-style" to="/contact_me">
                           Contact Us
                         </Link>
                       </Box>
